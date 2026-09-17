@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CineScope
+
+A movie discovery web application built with Next.js, TypeScript, Tailwind CSS, TMDB API, Axios, and Clerk authentication.
+
+## Features
+
+- Browse popular movies
+- Search for movies
+- View detailed movie information
+- Add movies to Favorites
+- Remove movies from Favorites
+- Clerk authentication
+- Protected Favorites page
+- Responsive design for desktop and mobile
+- Loading and error states
+
+## Tech Stack
+
+- Next.js
+- TypeScript
+- React
+- Tailwind CSS
+- Axios
+- TMDB API
+- Clerk Authentication
+
+## Project Structure
+
+```
+app/
+├── components/
+├── favorites/
+├── movies/
+├── search/
+├── sign-in/
+├── sign-up/
+└── layout.tsx
+
+hooks/
+lib/
+types/
+public/
+```
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 1. Clone the repository
+```
+git clone https://github.com/ashtami-kp/CineScope.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Create environment variables
 
-## Learn More
+Create a `.env.local` file in the root of the project. Add your TMDB and Clerk environment variables:
+```
+TMDB_ACCESS_TOKEN=your_tmdb_access_token
 
-To learn more about Next.js, take a look at the following resources:
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+```
+Do not commit `.env.local` to GitHub.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Run the development server
+```
+npm run dev
+```
+Open: `http://localhost:3000`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## API
 
-## Deploy on Vercel
+Movie data is provided by the TMDB API. TMDB is not affiliated with or endorsed by this project.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Authentication
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Clerk is used for:
+- Sign in
+- Sign up
+- User profile
+- Sign out
+- Protecting the Favorites page
+
+## Future Improvements
+
+- Store Favorites per user in a database
+- Improve movie recommendations
+- Add more movie categories
+- Add additional UI improvements
+
+## Author
+
+Built as a frontend development project to practice Next.js, TypeScript, API integration, authentication, and responsive UI development.
